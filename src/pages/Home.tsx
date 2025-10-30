@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     if (!file) return
     setUploading(true)
     try {
-      const { uploadUrl, fileId } = await getUploadUrl(file.name, "user123")
+      const { uploadUrl, } = await getUploadUrl(file.name, "user123")
       await fetch(uploadUrl, { method: "PUT", body: file })
       await new Promise(res => setTimeout(res, 3000))
       await loadFiles()
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
     <div className="home-container">
       <header className="home-header">
         <h1>File Manager</h1>
-        <p>Upload, manage and share your files easily</p>
+        <p>Upload your files easily</p>
       </header>
 
       <section className="upload-section">
