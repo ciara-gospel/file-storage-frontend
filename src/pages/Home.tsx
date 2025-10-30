@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     if (!file) return
     setUploading(true)
     try {
-      const { uploadUrl, } = await getUploadUrl(file.name, "user123")
+      const { uploadUrl, fileId } = await getUploadUrl(file.name, "user123")
       await fetch(uploadUrl, { method: "PUT", body: file })
       await new Promise(res => setTimeout(res, 3000))
       await loadFiles()

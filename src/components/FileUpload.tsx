@@ -19,7 +19,7 @@ export default function FileUpload() {
       );
       const data = await res.json();
 
-      const { uploadUrl, downloadUrl, } = data;
+      const { uploadUrl, downloadUrl, fileKey } = data;
 
       // 2️⃣ Envoyer le fichier sur S3
       const uploadRes = await fetch(uploadUrl, {
